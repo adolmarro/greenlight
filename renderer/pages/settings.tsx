@@ -22,7 +22,6 @@ function Settings() {
         alert((args.data !== undefined) ? args.message+': '+JSON.stringify(args.data) : args.message)
 
       } else if(args.type === 'user') {
-        console.log('got event response:', args)
         setGamertag(args.gamertag)
       }
     })
@@ -68,6 +67,13 @@ function Settings() {
     })
   }
 
+  function setVideoSize(e){
+    setSettings({
+      ...settings,
+      video_size: e
+    })
+  }
+
   function drawControllers(){
     const gamepads = navigator.getGamepads()
     let controllerHtml = '<h1>Gamepads detected</h1> '
@@ -86,7 +92,8 @@ function Settings() {
 
     document.getElementById('settings_gamepad_layout').innerHTML = controllerHtml
   }
-
+  console.log(settings.video_size);
+  
   return (
     <React.Fragment>
       <Head>
@@ -144,6 +151,19 @@ function Settings() {
           <div id='settings_gamepad_layout'>
 
           </div>
+        </Card>
+
+        <Card className='padbottom'>
+          <h1>Video</h1>
+
+          <p>
+            Video size: &nbsp; 
+            <select value={settings.video_size} onChange={(e) => {setVideoSize(e.target.value)}}>
+              <option selected value='default'>Default</option>
+              <option value='stretch'>Stretch</option>
+              <option value='zoom'>Zoom</option>
+            </select>
+          </p>
         </Card>
       </div>
     </React.Fragment>

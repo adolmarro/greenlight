@@ -60,7 +60,7 @@ function Stream() {
   })
 
   React.useEffect(() => {
-    document.getElementById('streamComponentHolder').innerHTML = '<div id="streamComponent"></div>'
+    document.getElementById('streamComponentHolder').innerHTML = '<div id="streamComponent" class="size_'+settings.video_size+'"></div>'
 
     let ipc_channel = 'stream'
     let serverId = router.query.serverid

@@ -1,7 +1,12 @@
 # Changelog
 
-## v2.0.0-beta8 - 2023-05-xx
+## v2.0.0-beta8 - 2023-05-31
 - Add --connect=<value> option to start a stream op startup #805 #509 
+- Add video zoom option #667 (PR#835, Credits to @adolmarro)
+- Fix app not closing on Windows and Linux when using OS close button (PR#843, credits to @kohanyirobert)
+- Don't always rebuild xal-node if not necessary (PR#842, credits to @kohanyirobert)
+- Added debug graphs in debug window #828
+- Added new application icons #351 #787
 
 ## v2.0.0-beta7 - 2023-04-11
 - Smoothen login experience by saving the login tokens and attempt authentication before popup prompt #782
